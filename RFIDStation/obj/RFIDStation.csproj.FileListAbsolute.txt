@@ -1,0 +1,47 @@
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\bin\Release\RFIDStation.exe.config
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.exe
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.pdb
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO14443A.resources
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO15693.resources
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.RFIDStation.resources
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.Properties.Resources.resources
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.uartDebug.resources
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.updateSystem.resources
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\obj\Release\RFIDStation.csproj.GenerateResource.Cache
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\bin\Release\RFIDStation.exe
+C:\Documents and Settings\qianww_5\桌面\RFIDStation\RFIDStation\bin\Release\RFIDStation.pdb
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\bin\Release\RFIDStation.exe.config
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\bin\Release\RFIDStation.exe
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\bin\Release\RFIDStation.pdb
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\ResolveAssemblyReference.cache
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.felica.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO14443A.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO14443B.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO15693.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.NfcTools.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.RFIDStation.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.Properties.Resources.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.EmulateNfcType2Tag.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.uartDebug.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.updateSystem.resources
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.csproj.GenerateResource.Cache
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.exe
+E:\AnyID\HFReader\software\RFIDStation\RFIDStation\obj\Release\RFIDStation.pdb
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\bin\Release\RFIDStation.exe.config
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\bin\Release\RFIDStation.exe
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\bin\Release\RFIDStation.pdb
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\ResolveAssemblyReference.cache
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.felica.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO14443A.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO14443B.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.ISO15693.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.NfcTools.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.RFIDStation.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.Properties.Resources.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.EmulateNfcType2Tag.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.uartDebug.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.updateSystem.resources
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.csproj.GenerateResource.Cache
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.exe
+E:\AnyID\HFReader\用户资料\用户资料\Src\RFIDStation\RFIDStation\obj\Release\RFIDStation.pdb

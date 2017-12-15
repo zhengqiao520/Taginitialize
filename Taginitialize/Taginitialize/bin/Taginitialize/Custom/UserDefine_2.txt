@@ -1,0 +1,7 @@
+<NAME>Leakage 2</NAME>
+<DES>
+Enable Leakage Cancellation and report the result of it
+</DES>
+<RCP>
+BB 00 B5 00 01 02 7E
+</RCP>

@@ -1,0 +1,136 @@
+0	Version				NULL		uint16		ver;
+1	F/W				NULL		uint8		date[3];
+2	Band				NULL		uint8		region;		
+							uint8		cur_ch; 		
+							uint8		cur_ch_ext;
+3	anti-collision			NULL		uint8		mode
+4	modulation			NULL		uint8		mode
+							uint16		blf
+5	query				NULL		uint8		q	
+6	PartNumber			NULL		uint8		Value[10]
+7	Dev				NULL		uint8		dev
+8	F/W_Version			NULL		uint8		ver[30]
+9	Leak_mode			NULL		uint8		mode
+10	session				NULL		uint8		session
+11 	serial				NULL		uint8		item[10]
+12 	beep				NULL		uint8		beep_enable
+13	gpadc				NULL		uint8 		min
+							uint8 		max
+14 	q				NULL		uint8		q
+15	antenna				NULL		uint8 		port_bit
+16	Tx_KR				NULL		int16		max_power;
+							int16		min_Power;
+							int16		cur_Power;
+17	FH/LBT_KR			NULL		uint16		tx_on_time;
+							uint16		tx_off_time;
+							uint16		sense_time;
+							int16		lbt_rf_level;	
+							uint8		fh_enable;
+							uint8		lbt_enable;
+							uint8		cw_enable;	
+
+18	FH_table_KR			NULL		uint8		size;
+							uint8		table[50];
+19	POWER_TABLE_KR			NULL		uint8		size;
+							uint16		Power[ModuleTableSize];
+20	FB_Paramter_KR			NULL		uint8		txLPF
+							uint8		FB_RES1
+							uint8		FB_RES2
+21	RSSI_Offset_KR			NULL		int16		Value
+                        				int16   	reserved
+22	ch_offset_KR			NULL		uint8		high
+							uint8 		low
+23	Tx_US				NULL		int16		max_power;
+							int16		min_Power;
+							int16		cur_Power;
+
+24	FH/LBT_US			NULL		uint16		tx_on_time;
+							uint16		tx_off_time;
+							uint16		sense_time;
+							int16		lbt_rf_level;	
+							uint8		fh_enable;
+							uint8		lbt_enable;
+							uint8		cw_enable;	
+
+25	FH_table_US			NULL		uint8		size;
+							uint8		table[50];
+26	POWER_TABLE_US			NULL		uint8		size;
+							uint16		Power[ModuleTableSize];
+27	FB_Paramter_US			NULL		uint8		txLPF
+							uint8		FB_RES1
+							uint8		FB_RES2
+28	RSSI_Offset_US			NULL		int16		Value
+                            				int16   	reserved
+29	ch_offset_US			NULL		uint8		high
+							uint8 		low
+30	Tx_JP				NULL		int16		max_power;
+							int16		min_Power;
+							int16		cur_Power;
+31	FH/LBT_JP			NULL		uint16		tx_on_time;
+							uint16		tx_off_time;
+							uint16		sense_time;
+							int16		lbt_rf_level;	
+							uint8		fh_enable;
+							uint8		lbt_enable;
+							uint8		cw_enable;	
+32	FH_table_JP			NULL		uint8		size;
+							uint8		table[50];
+33	POWER_TABLE_JP			NULL		uint8		size;
+							uint16		Power[ModuleTableSize];
+34	FB_Paramter_JP			NULL		uint8		txLPF
+							uint8		FB_RES1
+							uint8		FB_RES2
+35	RSSI_Offset_JP			NULL		int16		Value
+                           				int16   	reserved
+36	ch_offset_JP			NULL		uint8		high
+							uint8 		low
+37	Tx_EU				NULL		int16		max_power;
+							int16		min_Power;
+							int16		cur_Power;
+38	FH/LBT_EU			NULL		uint16		tx_on_time;
+							uint16		tx_off_time;
+							uint16		sense_time;
+							int16		lbt_rf_level;	
+							uint8		fh_enable;
+							uint8		lbt_enable;
+							uint8		cw_enable;	
+39	FH_table_EU			NULL		uint8		size;
+							uint8		table[50];
+40	POWER_TABLE_EU			NULL		uint8		size;
+							uint16		Power[ModuleTableSize];
+41	FB_Paramter_EU			NULL		uint8		txLPF
+							uint8		FB_RES1
+							uint8		FB_RES2
+42	RSSI_Offset_EU			NULL		int16		Value
+                            				int16  		 reserved                            
+43	ch_offset_EU			NULL		uint8		high
+							uint8 		low
+44	FH_table_US2			NULL		uint8		size;
+							uint8		table[50];
+45	FH_table_CH			NULL		uint8		size;
+							uint8		table[50];
+46	FH_Mode				NULL		uint8		mode
+							uint8		ref_level
+47	Tx_BR				NULL		int16		max_power;
+							int16		min_Power;
+							int16		cur_Power;
+48	FH/LBT_BR			NULL		uint16		tx_on_time;
+							uint16		tx_off_time;
+							uint16		sense_time;
+							int16		lbt_rf_level;	
+							uint8		fh_enable;
+							uint8		lbt_enable;
+							uint8		cw_enable;
+49	FH_table_BR			NULL		uint8		size;
+							uint8		table[115];	
+50	FB_Paramter_BR			NULL		uint8		txLPF
+							uint8		FB_RES1
+							uint8		FB_RES2
+51	RSSI_Offset_BR			NULL		int16		Value
+			 	                        int16   	reserved                            
+52	ch_offset_BR			NULL		uint8		high
+							uint8 		low
+54	PWR_TBL_INTERNAL_KR		NULL		uint8		size;
+							uint8		table[61];
+55	LOB_HPTX			NULL		uint8		addr;
+							uint8		data;

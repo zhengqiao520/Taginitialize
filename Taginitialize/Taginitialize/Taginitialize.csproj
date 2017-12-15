@@ -1,0 +1,866 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <GenerateResourceNeverLockTypeAssemblies>true</GenerateResourceNeverLockTypeAssemblies>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC927CC4-DD52-42F7-984C-8B451A6AFE62}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Phychips.PR9200</RootNamespace>
+    <AssemblyName>Taginitialize</AssemblyName>
+    <ApplicationIcon>Icons\RED.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>DEE78AA33E6BB2BFA96D922EEE20510EF5A86C6E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Phychips.PR9000DEMO_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignAssembly>false</SignAssembly>
+    <StartupObject>Phychips.PR9200.Program</StartupObject>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>ftp://143.248.246.43/publish/PR9000/SDK/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <SupportUrl>http://143.248.246.43/publish/PR9000/SDK/publish.htm</SupportUrl>
+    <TargetCulture>ko-KR</TargetCulture>
+    <ProductName>PR9200 Utility</ProductName>
+    <PublisherName>Phychips</PublisherName>
+    <MinimumRequiredVersion>1.0.0.6</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarChart, Version=1.0.0.30667, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ref\BarChart.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar">
+      <HintPath>.\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorProgressBar">
+      <HintPath>.\ColorProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevLib.Data">
+      <HintPath>..\ref\DevLib.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphLib">
+      <HintPath>.\GraphLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\ref\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Visa.Interop">
+      <HintPath>.\Ivi.Visa.Interop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\ref\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\ref\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\ref\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\ref\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Phychips.Control, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ref\Phychips.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="Phychips.Driver, Version=1.0.0.30668, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ref\Phychips.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Phychips.Helper, Version=1.0.0.30667, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ref\Phychips.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Phychips.RCP, Version=1.0.0.30668, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ref\Phychips.RCP.dll</HintPath>
+    </Reference>
+    <Reference Include="ProgressCircle, Version=1.1.5449.24258, Culture=neutral, PublicKeyToken=3911fa6fb758cf71, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ProgressCircle.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\ref\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\ref\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeToMsgTable.cs" />
+    <Compile Include="ExcelHelper.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookImport.Designer.cs">
+      <DependentUpon>FormBookImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfirmBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfirmBook.Designer.cs">
+      <DependentUpon>FormConfirmBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPowerLevelTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPowerLevelTable.Designer.cs">
+      <DependentUpon>FormPowerLevelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReadRangeCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReadRangeCalculator.Designer.cs">
+      <DependentUpon>FormReadRangeCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormScriptEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScriptEditor.Designer.cs">
+      <DependentUpon>FormScriptEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSensorTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSensorTag.Designer.cs">
+      <DependentUpon>FormSensorTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTLRPprocess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTLRPprocess.Designer.cs">
+      <DependentUpon>FormTLRPprocess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTxLeakagePlot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTxLeakagePlot.Designer.cs">
+      <DependentUpon>FormTxLeakagePlot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserDefine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserDefine.Designer.cs">
+      <DependentUpon>FormUserDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeakGuidance.cs" />
+    <Compile Include="LinkedList.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistryUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistryUpdate.designer.cs">
+      <DependentUpon>RegistryUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChannelTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChannelTable.Designer.cs">
+      <DependentUpon>FormChannelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDownload.designer.cs">
+      <DependentUpon>FormDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormScanRssi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScanRssi.Designer.cs">
+      <DependentUpon>FormScanRssi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromTaginitialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromTaginitialize.designer.cs">
+      <DependentUpon>FromTaginitialize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTagInfoReserved.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTagInfoReserved.Designer.cs">
+      <DependentUpon>FormTagInfoReserved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormTagInfoEpc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTagInfoEpc.Designer.cs">
+      <DependentUpon>FormTagInfoEpc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTagInfoTid7816.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTagInfoTid7816.Designer.cs">
+      <DependentUpon>FormTagInfoTid7816.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTagInfoTidEpc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTagInfoTidEpc.Designer.cs">
+      <DependentUpon>FormTagInfoTidEpc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTagInfoUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTagInfoUser.Designer.cs">
+      <DependentUpon>FormTagInfoUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagInitEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagInitEntry.Designer.cs">
+      <DependentUpon>TagInitEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCustom.Designer.cs">
+      <DependentUpon>UserControlCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLeakGuidance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLeakGuidance.designer.cs">
+      <DependentUpon>UserControlLeakGuidance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSensorTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSensorTag.Designer.cs">
+      <DependentUpon>UserControlSensorTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSensorTagEM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSensorTagEM.Designer.cs">
+      <DependentUpon>UserControlSensorTagEM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookImport.resx">
+      <DependentUpon>FormBookImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfirmBook.resx">
+      <DependentUpon>FormConfirmBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPowerLevelTable.resx">
+      <DependentUpon>FormPowerLevelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReadRangeCalculator.resx">
+      <DependentUpon>FormReadRangeCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScriptEditor.resx">
+      <DependentUpon>FormScriptEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSensorTag.resx">
+      <DependentUpon>FormSensorTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTLRPprocess.resx">
+      <DependentUpon>FormTLRPprocess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTxLeakagePlot.resx">
+      <DependentUpon>FormTxLeakagePlot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserDefine.resx">
+      <DependentUpon>FormUserDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="RegistryUpdate.resx">
+      <DependentUpon>RegistryUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChannelTable.resx">
+      <DependentUpon>FormChannelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDownload.resx">
+      <DependentUpon>FormDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScanRssi.resx">
+      <DependentUpon>FormScanRssi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromTaginitialize.resx">
+      <DependentUpon>FromTaginitialize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTagInfoReserved.resx">
+      <DependentUpon>FormTagInfoReserved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagInitEntry.resx">
+      <DependentUpon>TagInitEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAdvanced.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucAdvanced.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDownloader.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRegistry.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucRegistry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucHwControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucHwControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProtocol.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTagInformation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucTagInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTagInfoEpc.resx">
+      <DependentUpon>FormTagInfoEpc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTagInfoTid7816.resx">
+      <DependentUpon>FormTagInfoTid7816.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTagInfoTidEpc.resx">
+      <DependentUpon>FormTagInfoTidEpc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTagInfoUser.resx">
+      <DependentUpon>FormTagInfoUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlCustom.resx">
+      <DependentUpon>UserControlCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLeakGuidance.resx">
+      <DependentUpon>UserControlLeakGuidance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSensorTag.resx">
+      <DependentUpon>UserControlSensorTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSensorTagEM.resx">
+      <DependentUpon>UserControlSensorTagEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScriptParser.cs" />
+    <Compile Include="ScriptToRCP.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="TxLeakageRSSI.cs" />
+    <Compile Include="ucAdvanced.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAdvanced.Designer.cs">
+      <DependentUpon>ucAdvanced.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDownloader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDownloader.Designer.cs">
+      <DependentUpon>ucDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucRegistry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRegistry.Designer.cs">
+      <DependentUpon>ucRegistry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucHwControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucHwControl.Designer.cs">
+      <DependentUpon>ucHwControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucProtocol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProtocol.Designer.cs">
+      <DependentUpon>ucProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTagInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTagInformation.Designer.cs">
+      <DependentUpon>ucTagInformation.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Custom\UserDefine_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Custom\UserDefine_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Custom\UserDefine_3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Custom\UserDefine_4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Custom\UserDefine_5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\RFIDTags.ldf">
+      <DependentUpon>RFIDTags.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\RFIDTags.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\phychips.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\RED.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="logo.png" />
+    <None Include="NLog.config" />
+    <Content Include="Plot\RawData\SampleData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plot\SampeImage.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_401.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_402.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_501.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_502.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_403.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_503.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_404.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RegistryTypeDef\registry_Type_504.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\1downarrow.png" />
+    <Content Include="Resources\1leftarrow.png" />
+    <Content Include="Resources\1rightarrow.png" />
+    <Content Include="Resources\1uparrow.png" />
+    <Content Include="Resources\2downarrow.png" />
+    <Content Include="Resources\2leftarrow.png" />
+    <Content Include="Resources\2rightarrow.png" />
+    <Content Include="Resources\2uparrow.png" />
+    <Content Include="Resources\64x64\player_play.png" />
+    <Content Include="Resources\64x64\player_stop.png" />
+    <Content Include="Resources\about_kde.png" />
+    <Content Include="Resources\apply.png" />
+    <Content Include="Resources\artsaudiomanager.png" />
+    <Content Include="Resources\artsenvironment.png" />
+    <Content Include="Resources\artsmediatypes.png" />
+    <Content Include="Resources\artsmidimanager.png" />
+    <Content Include="Resources\attach.png" />
+    <Content Include="Resources\back.png" />
+    <Content Include="Resources\blend.png" />
+    <Content Include="Resources\bookmark.png" />
+    <Content Include="Resources\bookmarks_list_add.png" />
+    <Content Include="Resources\bookmark_add.png" />
+    <Content Include="Resources\bookmark_folder.png" />
+    <Content Include="Resources\bookmark_toolbar.png" />
+    <Content Include="Resources\bottom.png" />
+    <Content Include="Resources\button_accept.png" />
+    <Content Include="Resources\button_cancel.png" />
+    <Content Include="Resources\button_ok.png" />
+    <Content Include="Resources\camera_test.png" />
+    <Content Include="Resources\cancel.png" />
+    <Content Include="Resources\cd.png" />
+    <Content Include="Resources\colorize.png" />
+    <Content Include="Resources\colorpicker.png" />
+    <Content Include="Resources\color_fill.png" />
+    <Content Include="Resources\color_line.png" />
+    <Content Include="Resources\compfile.png" />
+    <Content Include="Resources\configure.png" />
+    <Content Include="Resources\connect_creating.png" />
+    <Content Include="Resources\connect_established.png" />
+    <Content Include="Resources\connect_no.png" />
+    <Content Include="Resources\cut.png" />
+    <Content Include="Resources\decrypted.png" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\editcopy.png" />
+    <Content Include="Resources\editcut.png" />
+    <Content Include="Resources\editdelete.png" />
+    <Content Include="Resources\editpaste.png" />
+    <Content Include="Resources\editshred.png" />
+    <Content Include="Resources\edittrash.png" />
+    <Content Include="Resources\edit_add.png" />
+    <Content Include="Resources\edit_remove.png" />
+    <Content Include="Resources\encrypted.png" />
+    <Content Include="Resources\endturn.png" />
+    <Content Include="Resources\exit.png" />
+    <Content Include="Resources\fileclose.png" />
+    <Content Include="Resources\fileexport.png" />
+    <Content Include="Resources\filenew.png" />
+    <Content Include="Resources\fileopen.png" />
+    <Content Include="Resources\fileprint.png" />
+    <Content Include="Resources\filequickprint.png" />
+    <Content Include="Resources\filesave.png" />
+    <Content Include="Resources\filesaveas.png" />
+    <Content Include="Resources\fill.png" />
+    <Content Include="Resources\find.png" />
+    <Content Include="Resources\finish.png" />
+    <Content Include="Resources\folder_new.png" />
+    <Content Include="Resources\forward.png" />
+    <Content Include="Resources\frameprint.png" />
+    <Content Include="Resources\gohome.png" />
+    <Content Include="Resources\help.png" />
+    <Content Include="Resources\history.png" />
+    <Content Include="Resources\history_clear.png" />
+    <Content Include="Resources\identity.png" />
+    <Content Include="Resources\irkick.png" />
+    <Content Include="Resources\irkickflash.png" />
+    <Content Include="Resources\irkickoff.png" />
+    <Content Include="Resources\kaboodleloop.png" />
+    <Content Include="Resources\kalarm.png" />
+    <Content Include="Resources\kalarm_disabled.png" />
+    <Content Include="Resources\kate.png" />
+    <Content Include="Resources\kcalc.png" />
+    <Content Include="Resources\kcmsystem.png" />
+    <Content Include="Resources\kdevelop_down.png" />
+    <Content Include="Resources\kgpg.png" />
+    <Content Include="Resources\kgpg_edit.png" />
+    <Content Include="Resources\kgpg_export.png" />
+    <Content Include="Resources\kgpg_gen.png" />
+    <Content Include="Resources\kgpg_identity.png" />
+    <Content Include="Resources\kgpg_import.png" />
+    <Content Include="Resources\kgpg_info.png" />
+    <Content Include="Resources\kgpg_key1.png" />
+    <Content Include="Resources\kgpg_key2.png" />
+    <Content Include="Resources\kgpg_key3.png" />
+    <Content Include="Resources\kgpg_photo.png" />
+    <Content Include="Resources\kgpg_show.png" />
+    <Content Include="Resources\kgpg_sign.png" />
+    <Content Include="Resources\kgpg_term.png" />
+    <Content Include="Resources\klipper_dock.png" />
+    <Content Include="Resources\kmixdocked.png" />
+    <Content Include="Resources\kmixdocked_error.png" />
+    <Content Include="Resources\kmixdocked_mute.png" />
+    <Content Include="Resources\kmplot.png" />
+    <Content Include="Resources\krec_record.png" />
+    <Content Include="Resources\laptop_charge.png" />
+    <Content Include="Resources\laptop_nobattery.png" />
+    <Content Include="Resources\laptop_nocharge.png" />
+    <Content Include="Resources\laptop_power.png" />
+    <Content Include="Resources\ledblue.png" />
+    <Content Include="Resources\ledgreen.png" />
+    <Content Include="Resources\ledlightblue.png" />
+    <Content Include="Resources\ledlightgreen.png" />
+    <Content Include="Resources\ledorange.png" />
+    <Content Include="Resources\ledpurple.png" />
+    <Content Include="Resources\ledred.png" />
+    <Content Include="Resources\ledyellow.png" />
+    <Content Include="Resources\lock.png" />
+    <Content Include="Resources\mail_delete.png" />
+    <Content Include="Resources\mail_find.png" />
+    <Content Include="Resources\mail_forward.png" />
+    <Content Include="Resources\mail_generic.png" />
+    <Content Include="Resources\mail_get.png" />
+    <Content Include="Resources\mail_new.png" />
+    <Content Include="Resources\mail_post_to.png" />
+    <Content Include="Resources\mail_reply.png" />
+    <Content Include="Resources\mail_replyall.png" />
+    <Content Include="Resources\mail_send.png" />
+    <Content Include="Resources\make_kdevelop.png" />
+    <Content Include="Resources\message.png" />
+    <Content Include="Resources\messagebox_critical.png" />
+    <Content Include="Resources\messagebox_info.png" />
+    <Content Include="Resources\messagebox_warning.png" />
+    <Content Include="Resources\misc.png" />
+    <Content Include="Resources\mix_midi.png" />
+    <Content Include="Resources\mix_recmon.png" />
+    <Content Include="Resources\mix_unknown.png" />
+    <Content Include="Resources\mix_volume.png" />
+    <Content Include="Resources\mouse.png" />
+    <Content Include="Resources\newfont.png" />
+    <Content Include="Resources\news_subscribe.png" />
+    <Content Include="Resources\news_unsubscribe.png" />
+    <Content Include="Resources\next.png" />
+    <Content Include="Resources\no.png" />
+    <Content Include="Resources\noatunloopsong.png" />
+    <Content Include="Resources\ok.png" />
+    <Content Include="Resources\openterm.png" />
+    <Content Include="Resources\pencil.png" />
+    <Content Include="Resources\piano.png" />
+    <Content Include="Resources\player_eject.png" />
+    <Content Include="Resources\player_end.png" />
+    <Content Include="Resources\player_fwd.png" />
+    <Content Include="Resources\player_pause.png" />
+    <Content Include="Resources\player_play.png" />
+    <Content Include="Resources\player_rev.png" />
+    <Content Include="Resources\player_rew.png" />
+    <Content Include="Resources\player_start.png" />
+    <Content Include="Resources\player_stop.png" />
+    <Content Include="Resources\playsound.png" />
+    <Content Include="Resources\power.png" />
+    <Content Include="Resources\previous.png" />
+    <Content Include="Resources\project_open.png" />
+    <Content Include="Resources\queue.png" />
+    <Content Include="Resources\quiz.png" />
+    <Content Include="Resources\rebuild.png" />
+    <Content Include="Resources\redo.png" />
+    <Content Include="Resources\reload.png" />
+    <Content Include="Resources\reload_all_tabs.png" />
+    <Content Include="Resources\reload_page.png" />
+    <Content Include="Resources\revert.png" />
+    <Content Include="Resources\roll.png" />
+    <Content Include="Resources\rotate.png" />
+    <Content Include="Resources\rotate_ccw.png" />
+    <Content Include="Resources\rotate_cw.png" />
+    <Content Include="Resources\run.png" />
+    <Content Include="Resources\save_all.png" />
+    <Content Include="Resources\signature.png" />
+    <Content Include="Resources\spellcheck.png" />
+    <Content Include="Resources\start.png" />
+    <Content Include="Resources\stop.png" />
+    <Content Include="Resources\tab_duplicate.png" />
+    <Content Include="Resources\tab_new.png" />
+    <Content Include="Resources\tab_new_raised.png" />
+    <Content Include="Resources\tab_remove.png" />
+    <Content Include="Resources\thumbnail.png" />
+    <Content Include="Resources\toggle_log.png" />
+    <Content Include="Resources\top.png" />
+    <Content Include="Resources\undo.png" />
+    <Content Include="Resources\up.png" />
+    <Content Include="Resources\usb.png" />
+    <Content Include="Resources\viewmag+.png" />
+    <Content Include="Resources\viewmag-.png" />
+    <Content Include="Resources\viewmag.png" />
+    <Content Include="Resources\viewmag1.png" />
+    <Content Include="Resources\viewmagfit.png" />
+    <Content Include="Resources\view_bottom.png" />
+    <Content Include="Resources\view_choose.png" />
+    <Content Include="Resources\view_detailed.png" />
+    <Content Include="Resources\view_fullscreen.png" />
+    <Content Include="Resources\view_icon.png" />
+    <Content Include="Resources\view_left_right.png" />
+    <Content Include="Resources\view_multicolumn.png" />
+    <Content Include="Resources\view_nofullscreen.png" />
+    <Content Include="Resources\view_remove.png" />
+    <Content Include="Resources\view_right.png" />
+    <Content Include="Resources\view_sidetree.png" />
+    <Content Include="Resources\view_text.png" />
+    <Content Include="Resources\view_top_bottom.png" />
+    <Content Include="Resources\view_tree.png" />
+    <Content Include="Resources\window_new.png" />
+    <Content Include="Resources\winprops.png" />
+    <Content Include="Resources\wizard.png" />
+    <Content Include="Script\Gen\rCPGen.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Script\Gen\rCPGen_withArray.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Script\Gen\Read Me.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SLABHIDDevice.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SLABHIDtoUART.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Axis8.png" />
+    <None Include="Resources\RSSIresolution.JPG" />
+    <Content Include="ding.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Adown.png" />
+    <Content Include="Icons\Aright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ref\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RFIDStation\RFIDStation.csproj">
+      <Project>{20a41520-3070-4528-86b7-95761381bc24}</Project>
+      <Name>RFIDStation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{f2baa590-5457-4ec3-8dec-f5023b7e1cbe}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

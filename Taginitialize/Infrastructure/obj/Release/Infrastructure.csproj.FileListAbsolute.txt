@@ -1,0 +1,7 @@
+D:\CodeRepertory\wdb_winclient\Taginitialize\Infrastructure\bin\Release\Infrastructure.dll
+D:\CodeRepertory\wdb_winclient\Taginitialize\Infrastructure\bin\Release\Infrastructure.pdb
+D:\CodeRepertory\wdb_winclient\Taginitialize\Infrastructure\obj\Release\Infrastructure.dll
+D:\CodeRepertory\wdb_winclient\Taginitialize\Infrastructure\obj\Release\Infrastructure.pdb
+D:\CodeRepertory\wdb_winclient\Taginitialize\Infrastructure\bin\Release\DevLib.Data.dll
+D:\CodeRepertory\wdb_winclient\Taginitialize\Infrastructure\bin\Release\DevLib.Data.xml
+D:\CodeRepertory\wdb_winclient\Taginitialize\Infrastructure\obj\Release\Infrastructure.csprojResolveAssemblyReference.cache

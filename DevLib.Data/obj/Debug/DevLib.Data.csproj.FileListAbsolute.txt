@@ -1,0 +1,33 @@
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\bin\Debug\DevLib.Data.XML
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\bin\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\bin\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\obj\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\obj\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\obj\Debug\Interop.VsWebProjectCBMLib.dll
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\obj\Debug\DevLib.Data.csproj.ResolveComReference.cache
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\bin\Debug\System.Data.SQLite.dll
+D:\CodeRepertory\wdb_winclient\Taginitialize\DevLib.Data\obj\Debug\DevLib.Data.csprojResolveAssemblyReference.cache
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\bin\Debug\DevLib.Data.XML
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\bin\Debug\DevLib.Data.dll
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\bin\Debug\DevLib.Data.pdb
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\obj\Debug\Interop.VsWebProjectCBMLib.dll
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\obj\Debug\DevLib.Data.csproj.ResolveComReference.cache
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\obj\Debug\DevLib.Data.dll
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\obj\Debug\DevLib.Data.pdb
+C:\Users\tianzhi\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DevLib.Data\obj\Debug\DevLib.Data.csprojResolveAssemblyReference.cache
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\bin\Debug\DevLib.Data.XML
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\bin\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\bin\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.csprojResolveAssemblyReference.cache
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\obj\Debug\Interop.VsWebProjectCBMLib.dll
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.csproj.ResolveComReference.cache
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_winclient_bk\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\bin\Debug\DevLib.Data.XML
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\bin\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\bin\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\Interop.VsWebProjectCBMLib.dll
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.csproj.ResolveComReference.cache
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.csprojResolveAssemblyReference.cache
