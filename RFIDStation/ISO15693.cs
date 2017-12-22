@@ -165,8 +165,7 @@ namespace RFIDStation
                 return;
             }
             MessageBox.Show("根据ISBN未检测到图书基本信息，无法建档！", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            this.txtISBN.Text = null;
-            lueBookInfo.Properties.DataSource = null;
+            btnClear_Click(null, null);
         }
         private async void SaveISBN()
         {
@@ -174,20 +173,24 @@ namespace RFIDStation
             var isbn = txtISBN.Text.Trim();
             if (isbn.Length > 20)
             {
-                MessageBox.Show("ISBN编号格式不正确,请重新扫描录入！", "系统提示");
+                MessageBox.Show("ISBN编号格式不正确,请重新扫描录入！", "系统提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 txtISBN.Text = null;
                 return;
             }
             if (string.IsNullOrEmpty(tagID) || string.IsNullOrEmpty(isbn))
             {
-                MessageBox.Show("TagID或ISBN编号不能为空！");
+                MessageBox.Show("TagID或ISBN编号不能为空！","系统提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
-            WriteNFCBlock(tagID);
+            WriteNFCBlock(txtISBN.Text.Trim());
             var tagInfo = TagInfoDAL.SelectBookInitMapping(tagID);
             if (tagInfo == null)
             {
                 var listBookInfo = lueBookInfo.Properties.DataSource as List<BookInfo>;
+                if (listBookInfo == null) {
+                     MessageBox.Show("图书信息不存在，无法入库请完善图书信息！", "系统提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    return;
+                }
                 int serializCount = listBookInfo.Count;
                 /*1单本isbn图书 2多本isbn丛书系列*/
                 int isbnType = serializCount > 1 ? 1 : 2;
@@ -282,7 +285,13 @@ namespace RFIDStation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SaveISBN();
+            try
+            {
+                SaveISBN();
+            }
+            catch(Exception ee) {
+                MessageBox.Show("系统异常" + ee.Message, "系统提示");
+            }
         }
 
         private void chkAutoSave_CheckedChanged(object sender, EventArgs e)

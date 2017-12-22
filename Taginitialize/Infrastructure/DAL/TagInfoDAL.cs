@@ -14,6 +14,7 @@ namespace Infrastructure
     public class TagInfoDAL
     {
 
+        private static Utility MySqlInstance = Utility.MySqlInstance;
         public static readonly string SSHString = System.Configuration.ConfigurationManager.AppSettings["ssh"].ToString();
         #region 同步mysql操作
 
@@ -23,7 +24,7 @@ namespace Infrastructure
         /// <returns></returns>
         public static DateTime GetMysqlSeverDateTime()
         {
-            var datetime = Utility.MySqlInstance.ExecuteScalar(CommandType.Text, "SELECT NOW()", null);
+            var datetime = MySqlInstance.ExecuteScalar(CommandType.Text, "SELECT NOW()", null);
             if (datetime != null)
             {
                 return Convert.ToDateTime(datetime);
@@ -38,7 +39,7 @@ namespace Infrastructure
         public static BookEntity GetBookEntityByRFIDCode(string rfid)
         {
             string sql = "select * from book_entity where rfid_code=@rfid";
-            var res = Utility.MySqlInstance.ExecuteList<BookEntity>(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
+            var res = MySqlInstance.ExecuteList<BookEntity>(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
                 new MySqlParameter("@rfid",rfid)
                 });
             if (null != res && res.Count > 0)
@@ -61,7 +62,7 @@ namespace Infrastructure
                 con.Open();
                 using (MySqlTransaction trans = con.BeginTransaction())
                 {
-                    var res = Utility.MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, new System.Data.Common.DbParameter[] {
+                    var res = MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, new System.Data.Common.DbParameter[] {
                     new MySqlParameter("@isbn_no",bookEntity.isbnNo),
                     new MySqlParameter("@rfid_code",bookEntity.rfidCode),
                     new MySqlParameter("@status",bookEntity.status),
@@ -92,7 +93,7 @@ namespace Infrastructure
                 sql += $" and book_name=@book_name";
                 param.Add(new MySqlParameter("@book_name", book_name));
             }
-            var listBookInfo = Utility.MySqlInstance.ExecuteList<BookInfo>(CommandType.Text, sql, param.ToArray());
+            var listBookInfo = MySqlInstance.ExecuteList<BookInfo>(CommandType.Text, sql, param.ToArray());
 
             if (null != listBookInfo && listBookInfo.Count > 0)
             {
@@ -110,7 +111,7 @@ namespace Infrastructure
             try
             {
                 string where = !string.IsNullOrEmpty(isbn) ? $" isbn_no='{isbn}'" : " 1=1";
-                var res = Utility.MySqlInstance.ExecuteList<BookInfo>(CommandType.Text, $"select * from book_info where {where}", null);
+                var res = MySqlInstance.ExecuteList<BookInfo>(CommandType.Text, $"select * from book_info where {where}", null);
                 return res;
             }
             catch
@@ -123,7 +124,7 @@ namespace Infrastructure
             try
             {
                 string sql = "select b.*,a.tag_id,a.isbn_type,a.create_time tag_create_time from book_init_mapping a join book_info b on a.isbn=b.isbn_no where a.tag_id=@tag_id";
-                var res=Utility.MySqlInstance.ExecuteList<BookInfoExt>(CommandType.Text, sql, new MySqlParameter[] {
+                var res=MySqlInstance.ExecuteList<BookInfoExt>(CommandType.Text, sql, new MySqlParameter[] {
                     new MySqlParameter("@tag_id",tag_id)
                 });
                 if (null != res&&res.Count>0) {
@@ -156,7 +157,7 @@ namespace Infrastructure
                     {
                         string update_sql = $"update book_info set brief='{bookinfo.brief}',`describe`='{bookinfo.describe}' where isbn_no='{bookinfo.isbn_no.Trim()}'";
                         //string update_sql = $"delete from  book_info where   isbn_no='{bookinfo.isbn_no.Trim()}'";
-                        Utility.MySqlInstance.ExecuteNonQuery(CommandType.Text, update_sql, null);
+                        MySqlInstance.ExecuteNonQuery(CommandType.Text, update_sql, null);
                     }
                     catch (Exception ee){}
                 }
@@ -184,7 +185,7 @@ namespace Infrastructure
                     new MySqlParameter("@create_time",bookinfo.create_time),
                     new MySqlParameter("@modify_time",bookinfo.modify_time)
                 };
-                    int result = Utility.MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, param);
+                    int result = MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, param);
                     trans.Commit();
                     return result > 0;
                 }
@@ -195,10 +196,11 @@ namespace Infrastructure
         /// </summary>
         /// <param name="bookInfos"></param>
         /// <param name="enableUpdate"></param>
-        public static void BatchInsertBookInfo(List<BookInfo> bookInfos, out List<BookInfo> failBookList, out List<BookInfo> existsBookList ,bool enableUpdate = false)
+        public static void BatchInsertBookInfo(List<BookInfoExt> bookInfos, out List<BookInfoExt> failBookList, out List<BookInfoExt> existsBookList , out List<BookInfoExt>  successBookListbool,bool enableUpdate = false)
         {
-            failBookList = new List<BookInfo>();
-            existsBookList = new List<BookInfo>();
+            failBookList = new List<BookInfoExt>();
+            existsBookList = new List<BookInfoExt>();
+            successBookListbool = new List<BookInfoExt>();
             using (MySqlConnection con = new MySqlConnection(Utility.MysqlDES3DecryptConnctionString))
             {
                 con.Open();
@@ -207,7 +209,7 @@ namespace Infrastructure
                     for (int i = 0; i < bookInfos.Count; i++)
                     {
                         var bookinfo = bookInfos[i];
-                        var res = Utility.MySqlInstance.ExecuteList<BookInfo>(CommandType.Text, $"select * from book_info where isbn_no='{bookinfo.isbn_no}'", null);
+                        var res = MySqlInstance.ExecuteList<BookInfo>(CommandType.Text, $"select * from book_info where isbn_no='{bookinfo.isbn_no}'", null);
                         if (res != null && res.Count > 0)
                         {
                             //是否更新图书信息
@@ -217,7 +219,7 @@ namespace Infrastructure
                                 {
                                     string update_sql = $"update book_info set book_name='{bookinfo.book_name}',brief='{bookinfo.brief}',`describe`='{bookinfo.describe}' where isbn_no='{bookinfo.isbn_no.Trim()}'";
                                     //string update_sql = $"delete from  book_info where   isbn_no='{bookinfo.isbn_no.Trim()}'";
-                                    Utility.MySqlInstance.ExecuteNonQuery(CommandType.Text, update_sql, null);
+                                    MySqlInstance.ExecuteNonQuery(CommandType.Text, update_sql, null);
                                     existsBookList.Add(bookinfo);
                                 }
                                 catch (Exception ee) {
@@ -245,8 +247,8 @@ namespace Infrastructure
                                     new MySqlParameter("@create_time",bookinfo.create_time),
                                     new MySqlParameter("@modify_time",bookinfo.modify_time)
                                 };
-                                int result = Utility.MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, param);
-                                trans.Commit();
+                                int result = MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, param);
+                                successBookListbool.Add(bookinfo);
                             }
                             catch {
                                 failBookList.Add(bookinfo);
@@ -254,6 +256,7 @@ namespace Infrastructure
                             }
                         }
                     }
+                    trans.Commit();
                 }
             }
         }
@@ -282,7 +285,7 @@ namespace Infrastructure
                         new MySqlParameter("@create_time",book_init_mapping.create_time),
                         new MySqlParameter("@isbn_type",book_init_mapping.isbn_type),
                         };
-                        var res = Utility.MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, param);
+                        var res = MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, param);
                         trans.Commit();
                         return 1;
                     }
@@ -305,7 +308,7 @@ namespace Infrastructure
             MySqlParameter[] param = new MySqlParameter[] {
                 new MySqlParameter("@tag_id",tag_id)
                 };
-            var res = Utility.MySqlInstance.ExecuteList<Book_init_mapping>(CommandType.Text, sql, param);
+            var res = MySqlInstance.ExecuteList<Book_init_mapping>(CommandType.Text, sql, param);
             if (null != res && res.Count > 0)
             {
                 return res[0];
@@ -336,7 +339,7 @@ namespace Infrastructure
                 param.Add(new MySqlParameter("@user_account", user_account));
             }
 
-            var res = Utility.MySqlInstance.ExecuteListText<Book_init_mapping>(sql, param.ToArray());
+            var res = MySqlInstance.ExecuteListText<Book_init_mapping>(sql, param.ToArray());
             return res;
         }
         /// <summary>
@@ -349,7 +352,7 @@ namespace Infrastructure
         {
             string range = rangeType == null ? DateTime.Now.ToString("yyyyMM") : rangeType;
             string sql = $"select * from book_init_mapping where tag_type={tagType} and  to_days(create_time)=to_days(now()) order by create_time desc";
-            var res = Utility.MySqlInstance.ExecuteList<Book_init_mapping>(CommandType.Text, sql, null);
+            var res = MySqlInstance.ExecuteList<Book_init_mapping>(CommandType.Text, sql, null);
             return res;
         }
 
@@ -358,7 +361,7 @@ namespace Infrastructure
             string range = rangeType == null ? DateTime.Now.ToString("yyyyMM") : rangeType;
             string sql = $"select a.ID, a.tag_id, a.isbn, a.status, a.account, a.tag_type, a.create_time, a.gather_time, a.filing_time, a.isbn_type, a.isbn_sequence,b.book_name from book_init_mapping a left join book_info b on a.isbn = b.isbn_no    where a.tag_type={tagType} and  to_days(a.create_time)=to_days(now()) order by a.create_time desc";
 
-            var res = Utility.MySqlInstance.ExecuteList<Book_init_mappingExt>(CommandType.Text, sql, null);
+            var res = MySqlInstance.ExecuteList<Book_init_mappingExt>(CommandType.Text, sql, null);
 
             return res;
         }
@@ -375,7 +378,7 @@ namespace Infrastructure
                 new MySqlParameter("@ISBN",isbn),
                 new MySqlParameter("@tag_id",tagID)
             };
-            var res = Utility.MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, param);
+            var res = MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, param);
             if (res > 0)
             {
                 return true;
@@ -390,7 +393,7 @@ namespace Infrastructure
         public static Book_init_user GetBookInitUser(string user_account)
         {
                 string sql = "select * from book_init_user where user_account=@user_name";
-                var res = Utility.MySqlInstance.ExecuteList<Book_init_user>(CommandType.Text, sql, new MySqlParameter[] {
+                var res = MySqlInstance.ExecuteList<Book_init_user>(CommandType.Text, sql, new MySqlParameter[] {
                 new MySqlParameter("@user_name",user_account)
                  });
                 if (null != res && res.Count > 0)
@@ -442,7 +445,7 @@ namespace Infrastructure
         public static bool DeletetBookInitMapping(string id)
         {
             string sql = "delete from book_init_mapping where id=@id";
-            var res = Utility.MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
+            var res = MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
             new MySqlParameter("@id",id)
             });
             return res > 0;
@@ -456,7 +459,7 @@ namespace Infrastructure
         public static bool InsertBookRfidIsbnMapping(BookRfidIsbnMapping bookRfidIsbnMapping)
         {
                 string sql = "insert into book_rfid_isbn_mapping(isbn,rfid_tag_id,isbn_sequence,isbn_type,status) values(@isbn,@rfid_tag_id,@isbn_sequence,@isbn_type,@status)";
-                var res = Utility.MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
+                var res = MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
                 new MySqlParameter("@isbn",bookRfidIsbnMapping.isbn),
                 new MySqlParameter("@rfid_tag_id",bookRfidIsbnMapping.rfid_tag_id),
                 new MySqlParameter("@isbn_sequence",bookRfidIsbnMapping.isbn_sequence),
@@ -486,10 +489,10 @@ namespace Infrastructure
         //        bookRfidIsbnMapping.isbn_sequence = listBookRfidIsbnMapping.Count;
         //        bookRfidIsbnMapping.isbn_type = 2;
         //        string update_sql = $"update book_rfid_isbn_mapping set isbn='{bookRfidIsbnMapping.isbn}'";
-        //        Utility.MySqlInstance.ExecuteNonQueryText(update_sql, null);
+        //        MySqlInstance.ExecuteNonQueryText(update_sql, null);
         //    }
         //    //更新BookRfidIsbnMapping中isbn对应图书信息
-        //    var res = Utility.MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
+        //    var res = MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
         //        new MySqlParameter("@isbn_sequence",bookRfidIsbnMapping.isbn_sequence),
         //        new MySqlParameter("@isbn_type", bookRfidIsbnMapping.isbn_type),
         //        new MySqlParameter("@rfid_tag_id", bookRfidIsbnMapping.rfid_tag_id)
@@ -505,7 +508,7 @@ namespace Infrastructure
         public static List<BookRfidIsbnMapping> GetBookRfidIsbnMappingByIsbn(string isbn = "")
         {
             string sql = "select * from book_rfid_isbn_mapping where isbn=@isbn";
-            var res = Utility.MySqlInstance.ExecuteList<BookRfidIsbnMapping>(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
+            var res = MySqlInstance.ExecuteList<BookRfidIsbnMapping>(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
             new MySqlParameter("@isbn",isbn)
             });
             return res;
@@ -519,6 +522,55 @@ namespace Infrastructure
         {
             return await Task.Run(() => InsertBookRfidIsbnMapping(bookRfidIsbnMapping));
         }
+        /// <summary>
+        /// 获取适读年龄
+        /// </summary>
+        /// <returns></returns>
+        public static List<DictBookReadable> GetDicBookReadable() {
+            return MySqlInstance.ExecuteList<DictBookReadable>(CommandType.Text, "select * from dict_book_readable", null);
+        }
+        /// <summary>
+        /// 保存图书标签信息
+        /// </summary>
+        /// <param name="bookTopical"></param>
+        /// <returns></returns>
+        public static bool InsertBookTopical(BookTopical bookTopical) {
+            MySqlParameter[] param = new MySqlParameter[] {
+                new MySqlParameter("@isbn",bookTopical.isbn),
+                new MySqlParameter("@topical_code",bookTopical.topical_code),
+                new MySqlParameter("@create_time",bookTopical.create_time)
+            };
+            string sql = "insert into book_topical(isbn,topical_code,create_time)values(@isbn,@topical_code,@create_time)";
+            int res=MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, param);
+            return res > 0;
+        }
+        /// <summary>
+        /// 获取图书主题映射表
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <param name="topical_name"></param>
+        /// <returns></returns>
+        public static List<BooktopicalMappings> GetBookTopicalMappingList() {
+            string sql = $"select * from book_topical_mappings";
+            return MySqlInstance.ExecuteList<BooktopicalMappings>(CommandType.Text, sql, null);
+        }
+        /// <summary>
+        /// 根据isbn和图书标签名获取对应关系
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <param name="topical_name"></param>
+        /// <returns></returns>
+        public static BookTopicalExt GetBookTopical(string isbn, string topical_name) {
+            string sql = $"select * from book_topical a join book_topical_mappings b  on a.topical_code=b.topical_code where a.isbn='{isbn}' and a.topical_code='{topical_name}'";
+            var res = MySqlInstance.ExecuteList<BookTopicalExt>(CommandType.Text, sql, null);
+            if (null != res && res.Count > 0)
+            {
+                return res[0];
+            }
+            return null;
+        }
+
+
         #endregion
 
         #region sqlite 操作

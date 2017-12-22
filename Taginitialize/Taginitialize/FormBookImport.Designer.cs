@@ -35,7 +35,6 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.chkUpdate = new DevExpress.XtraEditors.CheckEdit();
             this.btnExcel = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -46,6 +45,7 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -145,7 +145,6 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.hyperlinkLabelControl1);
             this.groupControl1.Controls.Add(this.chkUpdate);
             this.groupControl1.Controls.Add(this.btnExcel);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -155,17 +154,6 @@
             this.groupControl1.Size = new System.Drawing.Size(1233, 84);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "图书导入";
-            // 
-            // hyperlinkLabelControl1
-            // 
-            this.hyperlinkLabelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hyperlinkLabelControl1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(1131, 3);
-            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
-            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(96, 14);
-            this.hyperlinkLabelControl1.TabIndex = 4;
-            this.hyperlinkLabelControl1.Text = "<href=\"https://www.baidu.com/img/bd_logo1.png\">下载图书信息模板</href>";
             // 
             // chkUpdate
             // 
@@ -216,6 +204,7 @@
             this.gridColumn12,
             this.gridColumn13,
             this.gridColumn14,
+            this.gridColumn20,
             this.gridColumn15,
             this.gridColumn19,
             this.gridColumn16,
@@ -275,22 +264,30 @@
             this.gridColumn14.VisibleIndex = 4;
             this.gridColumn14.Width = 130;
             // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "主题类别";
+            this.gridColumn20.FieldName = "类别标签";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 5;
+            // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "价格";
             this.gridColumn15.FieldName = "价格";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 5;
+            this.gridColumn15.VisibleIndex = 6;
             this.gridColumn15.Width = 130;
             // 
             // gridColumn19
             // 
-            this.gridColumn19.Caption = "年龄";
-            this.gridColumn19.FieldName = "年龄";
+            this.gridColumn19.Caption = "适读年龄";
+            this.gridColumn19.FieldName = "适读年龄";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 8;
+            this.gridColumn19.VisibleIndex = 9;
             // 
             // gridColumn16
             // 
@@ -298,7 +295,7 @@
             this.gridColumn16.FieldName = "简介";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 6;
+            this.gridColumn16.VisibleIndex = 7;
             this.gridColumn16.Width = 130;
             // 
             // gridColumn17
@@ -307,7 +304,7 @@
             this.gridColumn17.FieldName = "描述";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 7;
+            this.gridColumn17.VisibleIndex = 8;
             this.gridColumn17.Width = 130;
             // 
             // gridColumn18
@@ -316,7 +313,7 @@
             this.gridColumn18.FieldName = "采集时间";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 9;
+            this.gridColumn18.VisibleIndex = 10;
             this.gridColumn18.Width = 137;
             // 
             // panelControl1
@@ -550,10 +547,10 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
         private DevExpress.XtraEditors.CheckEdit chkUpdate;
         private DevExpress.XtraEditors.ButtonEdit btnExcel;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
     }
 }

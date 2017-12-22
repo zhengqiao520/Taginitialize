@@ -94,11 +94,11 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft YaHei", 25F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl1.Location = new System.Drawing.Point(85, 98);
+            this.labelControl1.Location = new System.Drawing.Point(69, 97);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(340, 45);
+            this.labelControl1.Size = new System.Drawing.Size(374, 45);
             this.labelControl1.TabIndex = 6;
-            this.labelControl1.Text = "共享童书信息管理系统";
+            this.labelControl1.Text = "我的邦童书信息管理系统";
             // 
             // radioDatabase
             // 

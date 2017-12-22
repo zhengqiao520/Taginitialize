@@ -13,7 +13,7 @@ namespace Infrastructure
 
         public static string MYSQLConfig = "mysql";
         private const string SQLITEConfig = "sqlite";
-        private const string NFCAddress = "nfc_address";
+        private const string NFCAddress =  "nfc_address";
 
         public static string MysqlConnectionString {
             get {
@@ -22,7 +22,8 @@ namespace Infrastructure
         }
         public static string NFC_Address {
             get {
-                return GetConfigString(NFC_Address);
+                return System.Configuration.ConfigurationManager.AppSettings[NFCAddress];
+                    //"sm.wdb007.com/wdb007-info/book/detail.html?isbn={0}";
             }
         }
         public static string SqliteConnectionString {

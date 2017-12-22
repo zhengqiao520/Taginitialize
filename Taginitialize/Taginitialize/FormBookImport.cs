@@ -18,6 +18,8 @@ namespace Phychips.PR9200
 {
     public partial class FormBookImport : Form
     {
+        private List<DictBookReadable> listDictBookReadable = new List<DictBookReadable>();
+        private List<BooktopicalMappings> listBooktopicalMappings = new List<BooktopicalMappings>();
         private static Logger logger = LogManager.GetCurrentClassLogger();
         public Form fatherForm;
         public FormBookImport()
@@ -53,6 +55,8 @@ namespace Phychips.PR9200
             gvTemp.OptionsCustomization.AllowFilter = true;
             gvTemp.IndicatorWidth = 80;
             gvTemp.OptionsView.ShowIndicator = true;
+            listDictBookReadable=TagInfoDAL.GetDicBookReadable();
+            listBooktopicalMappings = TagInfoDAL.GetBookTopicalMappingList();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -68,8 +72,9 @@ namespace Phychips.PR9200
                 return;
             }
             string resultMsg = string.Empty;
-            List<BookInfo> failBookList = new List<BookInfo>();
-            List<BookInfo> existsBookList = new List<BookInfo>();
+            List<BookInfoExt> failBookList = new List<BookInfoExt>();
+            List<BookInfoExt> existsBookList = new List<BookInfoExt>();
+            List<BookInfoExt> successBookList = new List<BookInfoExt>(); 
             int total = 0;
             DataTable table = grdTemp.DataSource as DataTable;
             total = table == null ? 0 : table.Rows.Count;
@@ -78,11 +83,10 @@ namespace Phychips.PR9200
             {
                 try
                 {
-                    List<BookInfo> bookInfos = new List<BookInfo>();
+                    List<BookInfoExt> bookInfos = new List<BookInfoExt>();
                     for (int i = 0; i < table.Rows.Count; i++)
                     {
-
-                        BookInfo bookInfo = new BookInfo();
+                        BookInfoExt bookInfo = new BookInfoExt();
                         string msg = string.Empty;
                         DataRow row = table.Rows[i];
                         bookInfo.isbn_no = row["isbn_no"].ToString();
@@ -94,11 +98,56 @@ namespace Phychips.PR9200
                         bookInfo.price = row["价格"].ToString() == "" ? 0.00m : decimal.Parse(row["价格"].ToString());
                         bookInfo.brief = string.IsNullOrEmpty(row["简介"].ToString()) ? "暂无简介" : row["简介"].ToString();
                         bookInfo.describe = row["描述"].ToString();
+                        bookInfo.topical_name = row["类别标签"].ToString();
+                        string readable = row["适读年龄"] == null ? "" : row["适读年龄"].ToString();
+                        readable = readable.Replace("岁", "").Replace(" ", "").Replace("-", "-");
+                        var res = listDictBookReadable.Where(item => item.age == readable);
+                        if (res != null && res.Count() > 0)
+                        {
+                            readable = res.FirstOrDefault().readable;
+                        }
+                        else {
+                            readable = null;
+                        }
+                        bookInfo.readable = readable;
                         bookInfo.create_time = DateTime.Now;
                         bookInfo.modify_time = null;
                         bookInfos.Add(bookInfo);
                     }
-                    TagInfoDAL.BatchInsertBookInfo(bookInfos, out failBookList, out existsBookList, enableUpdate: chkUpdate.Checked);
+                    TagInfoDAL.BatchInsertBookInfo(bookInfos, out failBookList, out existsBookList,out successBookList, enableUpdate: chkUpdate.Checked);
+                    if (successBookList.Count > 0) {
+                        successBookList.ForEach(bookInfoExt =>
+                        {
+                            //保存图书主题标签信息
+                            if (!string.IsNullOrEmpty(bookInfoExt.topical_name))
+                            {
+                                string[] topicalNames = bookInfoExt.topical_name.Replace("，", ",").Replace(" ", "").Trim().Split(',');
+                                if (topicalNames.Count() > 0)
+                                {
+
+                                    topicalNames.ToList().ForEach(topicalName =>
+                                    {
+                                        var bookTopical=TagInfoDAL.GetBookTopical(bookInfoExt.isbn_no, topicalName);
+                                        if (bookTopical == null)
+                                        {
+                                            var topical_code = listBooktopicalMappings.Where(item => item.topical_name == topicalName.Trim()).Select(item => item.topical_code).DefaultIfEmpty(null);
+                                            if (topical_code != null) {
+                                                var toppic = new BookTopical
+                                                {
+                                                    create_time = DateTime.Now,
+                                                    isbn = bookInfoExt.isbn_no,
+                                                    topical_code = topical_code.FirstOrDefault()
+                                                };
+                                                TagInfoDAL.InsertBookTopical(toppic);
+                                            }
+
+                                        }
+                                    });
+                                }
+                            }
+                        });
+
+                    }
                     logger.Log(LogLevel.Info, $"失败记录：{failBookList.Select(item => new { 图书名称 = item.book_name, isbn = item.isbn_no }).ToString()}");
                     logger.Log(LogLevel.Info, $"已存在：{existsBookList.Select(item => new { 图书名称 = item.book_name, isbn = item.isbn_no }).ToString()}");
                     MessageBox.Show($"导入记录总数{total}条。\r\n失败{failBookList.Count}条。\r\n其中{existsBookList.Count}条已存在！", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);

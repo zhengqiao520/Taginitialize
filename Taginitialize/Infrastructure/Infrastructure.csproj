@@ -80,6 +80,8 @@
   <ItemGroup>
     <Compile Include="BarCodeHook.cs" />
     <Compile Include="Entity\BookInfoExt.cs" />
+    <Compile Include="Entity\BookTopical.cs" />
+    <Compile Include="Entity\DictBookReadable.cs" />
     <Compile Include="Entity\SSHInfo.cs" />
     <Compile Include="HexUtil.cs" />
     <Compile Include="ImageExtensions.cs" />
