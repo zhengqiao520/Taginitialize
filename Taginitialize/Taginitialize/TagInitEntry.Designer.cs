@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TagInitEntry));
-            DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement34 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement35 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement36 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement37 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement38 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement39 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement40 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labTitle = new DevExpress.XtraEditors.LabelControl();
             this.panelBtn = new System.Windows.Forms.Panel();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.pannelPicture = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAchievement = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDBEnvironment = new DevExpress.XtraEditors.LabelControl();
             this.panelStoreName = new System.Windows.Forms.Panel();
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.panelMiddle = new System.Windows.Forms.Panel();
@@ -60,8 +61,6 @@
             this.tileItemGoodsOut = new DevExpress.XtraEditors.TileItem();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileBookInfoImport = new DevExpress.XtraEditors.TileItem();
-            this.panelAchievement = new System.Windows.Forms.Panel();
-            this.lblDBEnvironment = new DevExpress.XtraEditors.LabelControl();
             this.panelTitle.SuspendLayout();
             this.panelBtn.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -105,7 +104,7 @@
             this.windowsUIButtonPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("退出系统", ((System.Drawing.Image)(resources.GetObject("windowsUIButtonPanel1.Buttons"))), -1, DevExpress.XtraBars.Docking2010.ImageLocation.Default, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", true, -1, true, null, true, false, true, null, "exit", -1, false, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("切换账号", ((System.Drawing.Image)(resources.GetObject("windowsUIButtonPanel1.Buttons1"))), -1, DevExpress.XtraBars.Docking2010.ImageLocation.Default, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", true, -1, true, null, true, false, true, null, "change", -1, false, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("切换账号", ((System.Drawing.Image)(resources.GetObject("windowsUIButtonPanel1.Buttons1"))), -1, DevExpress.XtraBars.Docking2010.ImageLocation.Default, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", true, -1, true, null, true, false, false, null, "change", -1, false, false)});
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 0);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -163,6 +162,15 @@
             this.panel2.Size = new System.Drawing.Size(34, 43);
             this.panel2.TabIndex = 4;
             // 
+            // panelAchievement
+            // 
+            this.panelAchievement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelAchievement.Location = new System.Drawing.Point(494, 3);
+            this.panelAchievement.Name = "panelAchievement";
+            this.panelAchievement.Size = new System.Drawing.Size(214, 40);
+            this.panelAchievement.TabIndex = 3;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblDBEnvironment);
@@ -171,6 +179,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(513, 43);
             this.panel1.TabIndex = 2;
+            // 
+            // lblDBEnvironment
+            // 
+            this.lblDBEnvironment.Appearance.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDBEnvironment.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblDBEnvironment.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblDBEnvironment.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblDBEnvironment.Location = new System.Drawing.Point(0, 0);
+            this.lblDBEnvironment.Name = "lblDBEnvironment";
+            this.lblDBEnvironment.Size = new System.Drawing.Size(431, 43);
+            this.lblDBEnvironment.TabIndex = 18;
+            this.lblDBEnvironment.Text = "labelControl1";
             // 
             // panelStoreName
             // 
@@ -198,7 +218,7 @@
             this.panelMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMiddle.Location = new System.Drawing.Point(0, 0);
             this.panelMiddle.Name = "panelMiddle";
-            this.panelMiddle.Size = new System.Drawing.Size(1263, 723);
+            this.panelMiddle.Size = new System.Drawing.Size(1263, 680);
             this.panelMiddle.TabIndex = 5;
             // 
             // tileControlMain
@@ -217,7 +237,7 @@
             this.tileControlMain.MaxId = 18;
             this.tileControlMain.Name = "tileControlMain";
             this.tileControlMain.Padding = new System.Windows.Forms.Padding(10);
-            this.tileControlMain.Size = new System.Drawing.Size(1263, 723);
+            this.tileControlMain.Size = new System.Drawing.Size(1263, 680);
             this.tileControlMain.TabIndex = 20;
             this.tileControlMain.Text = "tileControl2";
             // 
@@ -233,30 +253,30 @@
             this.tileCasher.AppearanceItem.Normal.BackColor = System.Drawing.Color.SkyBlue;
             this.tileCasher.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileCasher.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement31.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 25F, System.Drawing.FontStyle.Bold);
-            tileItemElement31.Appearance.Normal.Options.UseFont = true;
-            tileItemElement31.Image = global::Phychips.PR9200.Properties.Resources.logo;
-            tileItemElement31.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement31.ImageSize = new System.Drawing.Size(90, 90);
-            tileItemElement31.Text = "高频标签程序";
-            tileItemElement32.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            tileItemElement32.Appearance.Normal.Options.UseFont = true;
-            tileItemElement32.Text = "图书ISBN&RFID标签建档";
-            tileItemElement32.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement33.Text = "标签查询";
-            tileItemElement33.TextLocation = new System.Drawing.Point(0, 300);
-            tileItemElement34.Text = "标签读取";
-            tileItemElement34.TextLocation = new System.Drawing.Point(0, 290);
-            tileItemElement35.Text = "记录查询 ";
-            tileItemElement35.TextLocation = new System.Drawing.Point(0, 270);
-            tileItemElement36.Text = "记录维护";
-            tileItemElement36.TextLocation = new System.Drawing.Point(0, 250);
-            this.tileCasher.Elements.Add(tileItemElement31);
-            this.tileCasher.Elements.Add(tileItemElement32);
-            this.tileCasher.Elements.Add(tileItemElement33);
-            this.tileCasher.Elements.Add(tileItemElement34);
-            this.tileCasher.Elements.Add(tileItemElement35);
-            this.tileCasher.Elements.Add(tileItemElement36);
+            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 25F, System.Drawing.FontStyle.Bold);
+            tileItemElement11.Appearance.Normal.Options.UseFont = true;
+            tileItemElement11.Image = global::Phychips.PR9200.Properties.Resources.logo;
+            tileItemElement11.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement11.ImageSize = new System.Drawing.Size(90, 90);
+            tileItemElement11.Text = "高频标签程序";
+            tileItemElement12.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            tileItemElement12.Appearance.Normal.Options.UseFont = true;
+            tileItemElement12.Text = "图书ISBN&RFID标签建档";
+            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement13.Text = "标签查询";
+            tileItemElement13.TextLocation = new System.Drawing.Point(0, 300);
+            tileItemElement14.Text = "标签读取";
+            tileItemElement14.TextLocation = new System.Drawing.Point(0, 290);
+            tileItemElement15.Text = "记录查询 ";
+            tileItemElement15.TextLocation = new System.Drawing.Point(0, 270);
+            tileItemElement16.Text = "记录维护";
+            tileItemElement16.TextLocation = new System.Drawing.Point(0, 250);
+            this.tileCasher.Elements.Add(tileItemElement11);
+            this.tileCasher.Elements.Add(tileItemElement12);
+            this.tileCasher.Elements.Add(tileItemElement13);
+            this.tileCasher.Elements.Add(tileItemElement14);
+            this.tileCasher.Elements.Add(tileItemElement15);
+            this.tileCasher.Elements.Add(tileItemElement16);
             this.tileCasher.Id = 1;
             this.tileCasher.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileCasher.Name = "tileCasher";
@@ -269,11 +289,11 @@
             this.titleExit.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.titleExit.AppearanceItem.Normal.Options.UseBackColor = true;
             this.titleExit.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement37.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 22F);
-            tileItemElement37.Appearance.Normal.Options.UseFont = true;
-            tileItemElement37.Text = "退出系统";
-            tileItemElement37.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.titleExit.Elements.Add(tileItemElement37);
+            tileItemElement17.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 22F);
+            tileItemElement17.Appearance.Normal.Options.UseFont = true;
+            tileItemElement17.Text = "退出系统";
+            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.titleExit.Elements.Add(tileItemElement17);
             this.titleExit.Id = 5;
             this.titleExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.titleExit.Name = "titleExit";
@@ -286,17 +306,17 @@
             this.tileItemGoodsOut.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItemGoodsOut.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
             this.tileItemGoodsOut.ContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
-            tileItemElement38.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 28F, System.Drawing.FontStyle.Bold);
-            tileItemElement38.Appearance.Normal.Options.UseFont = true;
-            tileItemElement38.Image = global::Phychips.PR9200.Properties.Resources.logo;
-            tileItemElement38.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement38.Text = "超高频标签程序";
-            tileItemElement39.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement39.Appearance.Normal.Options.UseFont = true;
-            tileItemElement39.Text = "图书ISBN&RFID标签建档|RFID标签读写";
-            tileItemElement39.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemGoodsOut.Elements.Add(tileItemElement38);
-            this.tileItemGoodsOut.Elements.Add(tileItemElement39);
+            tileItemElement18.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 28F, System.Drawing.FontStyle.Bold);
+            tileItemElement18.Appearance.Normal.Options.UseFont = true;
+            tileItemElement18.Image = global::Phychips.PR9200.Properties.Resources.logo;
+            tileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement18.Text = "超高频标签程序";
+            tileItemElement19.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement19.Appearance.Normal.Options.UseFont = true;
+            tileItemElement19.Text = "图书ISBN&RFID标签建档|RFID标签读写";
+            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemGoodsOut.Elements.Add(tileItemElement18);
+            this.tileItemGoodsOut.Elements.Add(tileItemElement19);
             this.tileItemGoodsOut.Id = 12;
             this.tileItemGoodsOut.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileItemGoodsOut.Name = "tileItemGoodsOut";
@@ -310,36 +330,15 @@
             // 
             // tileBookInfoImport
             // 
-            tileItemElement40.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 28F, System.Drawing.FontStyle.Bold);
-            tileItemElement40.Appearance.Normal.Options.UseFont = true;
-            tileItemElement40.Image = global::Phychips.PR9200.Properties.Resources.RSSIresolution;
-            tileItemElement40.Text = "图书信息";
-            this.tileBookInfoImport.Elements.Add(tileItemElement40);
+            tileItemElement20.Appearance.Normal.Font = new System.Drawing.Font("Microsoft YaHei", 28F, System.Drawing.FontStyle.Bold);
+            tileItemElement20.Appearance.Normal.Options.UseFont = true;
+            tileItemElement20.Image = global::Phychips.PR9200.Properties.Resources.RSSIresolution;
+            tileItemElement20.Text = "图书信息";
+            this.tileBookInfoImport.Elements.Add(tileItemElement20);
             this.tileBookInfoImport.Id = 17;
             this.tileBookInfoImport.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileBookInfoImport.Name = "tileBookInfoImport";
             this.tileBookInfoImport.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBookInfoImport_ItemClick);
-            // 
-            // panelAchievement
-            // 
-            this.panelAchievement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelAchievement.Location = new System.Drawing.Point(494, 3);
-            this.panelAchievement.Name = "panelAchievement";
-            this.panelAchievement.Size = new System.Drawing.Size(214, 40);
-            this.panelAchievement.TabIndex = 3;
-            // 
-            // lblDBEnvironment
-            // 
-            this.lblDBEnvironment.Appearance.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDBEnvironment.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblDBEnvironment.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblDBEnvironment.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblDBEnvironment.Location = new System.Drawing.Point(0, 0);
-            this.lblDBEnvironment.Name = "lblDBEnvironment";
-            this.lblDBEnvironment.Size = new System.Drawing.Size(431, 43);
-            this.lblDBEnvironment.TabIndex = 18;
-            this.lblDBEnvironment.Text = "labelControl1";
             // 
             // TagInitEntry
             // 
@@ -347,8 +346,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 723);
             this.Controls.Add(this.panelTop);
-            this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelMiddle);
+            this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;

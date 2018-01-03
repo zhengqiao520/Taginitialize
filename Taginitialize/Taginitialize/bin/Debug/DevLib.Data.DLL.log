@@ -3743,3 +3743,183 @@ no such table: TagInfo
    在 MySql.Data.MySqlClient.MySqlConnection.Open()
    在 DevLib.Data.DbHelper.OpenConnection(Boolean throwOnError)
    在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-27T10:49:06.7009501+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Truncated incorrect DOUBLE value: 'E00401506FD3B9C2'
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T17:44:42.4950422+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T17:44:42.5846118+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:08:09.2641765+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:08:09.3104371+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:08:09.3468881+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:08:09.4063509+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:08:09.4707040+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:13:10.8293467+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:13:10.9419264+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:13:11.0284559+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:13:11.1136760+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-28T18:13:11.1996295+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'wdb007_dev.Book_readable' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 DevLib.Data.DbHelper.<>c.<ExecuteNonQuery>b__49_1(DbCommand command)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-29T09:50:51.2965189+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Reading from the stream has failed. ---> System.IO.EndOfStreamException: 尝试读取超出流末尾的内容。
+   在 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 DevLib.Data.DbHelper.OpenConnection(Boolean throwOnError)] |OpenConnection in <unknown>:0
+2017-12-29T09:50:51.3406485+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Reading from the stream has failed. ---> System.IO.EndOfStreamException: 尝试读取超出流末尾的内容。
+   在 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 DevLib.Data.DbHelper.OpenConnection(Boolean throwOnError)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0
+2017-12-29T09:50:52.6050960+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 DevLib.Data.DbHelper.OpenConnection(Boolean throwOnError)] |OpenConnection in <unknown>:0
+2017-12-29T09:50:52.6071010+08:00|INTL|tianzhi|001| [MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 DevLib.Data.DbHelper.OpenConnection(Boolean throwOnError)
+   在 DevLib.Data.DbHelper.FuncOnDb[TResult](Converter`2 prepareCommandFunc, Converter`2 executeCommandFunc, Boolean disposeCommand, Boolean disposeConnection)] |FuncOnDb<TResult> in <unknown>:0

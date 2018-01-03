@@ -13,7 +13,6 @@ namespace Infrastructure
 {
     public class TagInfoDAL
     {
-
         private static Utility MySqlInstance = Utility.MySqlInstance;
         public static readonly string SSHString = System.Configuration.ConfigurationManager.AppSettings["ssh"].ToString();
         #region 同步mysql操作
@@ -206,20 +205,62 @@ namespace Infrastructure
                 con.Open();
                 using (MySqlTransaction trans = con.BeginTransaction())
                 {
+                   
+                    List<BooktopicalMappings> listBooktopicalMappings = GetBookTopicalMappingList();
+                    Func<BookInfoExt,bool> funcInsertBookTopic = bookinfo =>
+                    {
+                        //保存图书主题标签信息
+                        if (!string.IsNullOrEmpty(bookinfo.topical_name))
+                        {
+                            string[] topicalNames = bookinfo.topical_name.Replace("，", ",").Replace(" ", "").Trim().Split(',');
+                            if (topicalNames.Count() > 0)
+                            {
+
+                                topicalNames.ToList().ForEach(topicalName =>
+                                {
+                                    var bookTopical = GetBookTopical(bookinfo.isbn_no, topicalName);
+                                    if (bookTopical == null)
+                                    {
+                                        var topical_code = listBooktopicalMappings.Where(item => item.topical_name == topicalName.Trim()).Select(item => item.topical_code).DefaultIfEmpty(null);
+                                        if (topical_code != null)
+                                        {
+                                            var toppic = new BookTopical
+                                            {
+                                                create_time = DateTime.Now,
+                                                isbn = bookinfo.isbn_no,
+                                                topical_code = topical_code.FirstOrDefault()
+                                            };
+                                            InsertBookTopical(toppic);
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                        return false;
+                    };
                     for (int i = 0; i < bookInfos.Count; i++)
                     {
                         var bookinfo = bookInfos[i];
                         var res = MySqlInstance.ExecuteList<BookInfo>(CommandType.Text, $"select * from book_info where isbn_no='{bookinfo.isbn_no}'", null);
-                        if (res != null && res.Count > 0)
+                        if (res != null && res.Count==1)
                         {
                             //是否更新图书信息
                             if (enableUpdate)
                             {
                                 try
                                 {
-                                    string update_sql = $"update book_info set book_name='{bookinfo.book_name}',brief='{bookinfo.brief}',`describe`='{bookinfo.describe}' where isbn_no='{bookinfo.isbn_no.Trim()}'";
-                                    //string update_sql = $"delete from  book_info where   isbn_no='{bookinfo.isbn_no.Trim()}'";
-                                    MySqlInstance.ExecuteNonQuery(CommandType.Text, update_sql, null);
+                                    string sql = $"update book_info set book_name='{bookinfo.book_name}',brief='{bookinfo.brief}',`describe`='{bookinfo.describe}' where isbn_no='{bookinfo.isbn_no.Trim()}';";
+                                    sql += $"update Book_readable set min_age='{bookinfo.min_age}',max_age='{bookinfo.max_age}',create_time='{DateTime.Now}' where isbn='{bookinfo.isbn_no}'";
+                                    int updateResult=MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, null);
+                                    if (updateResult>0)
+                                    {
+                                        //更新图书主题时，先删除再插入记录
+                                        sql = $" delete from book_topical where isbn='{bookinfo.isbn_no}'";
+                                        if (MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, null) > 0) {
+                                            funcInsertBookTopic(bookinfo);
+                                        }
+
+                                    }
                                     existsBookList.Add(bookinfo);
                                 }
                                 catch (Exception ee) {
@@ -248,6 +289,24 @@ namespace Infrastructure
                                     new MySqlParameter("@modify_time",bookinfo.modify_time)
                                 };
                                 int result = MySqlInstance.ExecuteNonQuery(trans, CommandType.Text, sql, param);
+                                if (result > 0) {
+
+                                    //保存适读年龄
+                                    if (GetBookReadable(bookinfo.isbn_no) == null)
+                                    {
+                                        var bookReadable = new BookReadable()
+                                        {
+                                            create_time = DateTime.Now,
+                                            isbn = bookinfo.isbn_no,
+                                            min_age = bookinfo.min_age != null ? bookinfo.min_age : null,
+                                            max_age = bookinfo.max_age != null ? bookinfo.max_age : null,
+                                        };
+                                        InsertBookReadable(bookReadable);
+                                    }
+                                    //写入图书主题标签信息
+                                    funcInsertBookTopic(bookinfo);
+
+                                }
                                 successBookListbool.Add(bookinfo);
                             }
                             catch {
@@ -442,11 +501,11 @@ namespace Infrastructure
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static bool DeletetBookInitMapping(string id)
+        public static bool DeletetBookInitMapping(string tag_id)
         {
-            string sql = "delete from book_init_mapping where id=@id";
+            string sql = "delete from book_init_mapping where tag_id=@tag_id";
             var res = MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new System.Data.Common.DbParameter[] {
-            new MySqlParameter("@id",id)
+            new MySqlParameter("@tag_id",tag_id)
             });
             return res > 0;
         }
@@ -569,7 +628,34 @@ namespace Infrastructure
             }
             return null;
         }
-
+        /// <summary>
+        /// 根据isbn查询适读年龄
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <returns></returns>
+        public static BookReadable GetBookReadable(string isbn) {
+            string sql = $"select * from book_readable where isbn='{isbn}'";
+            var res=MySqlInstance.ExecuteList<BookReadable>(CommandType.Text, sql,null);
+            if (null != res && res.Count > 0) {
+                return res[0];
+            }
+            return null;
+        }
+        /// <summary>
+        /// 保存适读年龄
+        /// </summary>
+        /// <param name="bookReadable"></param>
+        /// <returns></returns>
+        public static bool InsertBookReadable(BookReadable bookReadable) {
+            string sql = "insert into Book_readable(isbn,min_age,max_age,create_time)value(@isbn,@min_age,@max_age,@create_time)";
+            int res= MySqlInstance.ExecuteNonQuery(CommandType.Text, sql, new MySqlParameter[] {
+                new MySqlParameter("@isbn",bookReadable.isbn),
+                new MySqlParameter("@min_age",bookReadable.min_age),
+                new MySqlParameter("@max_age",bookReadable.max_age),
+                new MySqlParameter("@create_time",bookReadable.create_time)
+            });
+            return res > 0;
+        }
 
         #endregion
 

@@ -202,29 +202,11 @@ namespace RFIDStation
                     isbn = isbn,
                     create_time = DateTime.Now,
                     status = (int)InitStatusEnum.RecordInit,
-                    tag_type = (int)TagTypeEnum.UltrahighFrequency,
+                    tag_type = (int)TagTypeEnum.HighFrequency,
                     account = UserInfo.Instance.user_account,
                     isbn_type = isbnType,
                     isbn_sequence = 1
                 });
-
-                //if (insertResult > 0)
-                //{
-                //    //isbn,rfid_tag_id,isbn_sequence,isbn_type,status
-                //    BookRfidIsbnMapping bookRfidIsbnMapping = new BookRfidIsbnMapping
-                //    {
-                //        isbn = isbn,
-                //        rfid_tag_id = tagID,
-                //        isbn_sequence = 1,
-                //        isbn_type = 1,
-                //        status = 0
-                //    };
-                //    bool result = await TagInfoDAL.InsertBookRfidIsbnMappingAsync(bookRfidIsbnMapping);
-                //    if (result)
-                //    {
-                //        bool processStatus = TagInfoDAL.ProcessBookRfidIsbnMappingLogical(new BookRfidIsbnMapping { rfid_tag_id = bookRfidIsbnMapping.rfid_tag_id,isbn= bookRfidIsbnMapping.isbn });
-                //    }
-                //}
                 toolStripTagSyncStatus.Text = $"{tagID}同步成功!";
                 btnClear_Click(null, null);
             }
@@ -237,33 +219,6 @@ namespace RFIDStation
                     btnClear_Click(null, null);
                 }
             }
-
-
-            //var tagInfo = TagInfoDAL.SelectTagInfoByID(tagID);
-            //if (tagInfo== null)
-            //{
-            //    var insertResult = TagInfoDAL.InsertTagInfo(new TagInfo
-            //    {
-            //        TagID = tagID,
-            //        EPC = "",
-            //        ISBN = isbn,
-            //        CpuID = Utility.CpuId,
-            //        TagType = 1,
-            //        CreateDate=DateTime.Now,
-            //        Status=0
-            //    });
-            //    toolStripTagSyncStatus.Text = $"{tagID}同步成功!";
-            //    btnClear_Click(null, null);
-            //}
-            //else
-            //{
-            //    if (MessageBox.Show("RFID标签ID已存在,是否更新图书ISBN号？", "系统提示", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            //    {
-            //        bool updateResult=TagInfoDAL.UpdateTagInfo(isbn, tagID);
-            //        toolStripTagSyncStatus.Text = $"记录已存在！更新标签：{tagID}对应的ISBN!";
-            //        btnClear_Click(null, null);
-            //    }
-            //}
             BindTagList();
             first_char = null;
         }
@@ -1554,21 +1509,31 @@ namespace RFIDStation
         /// <param name="e"></param>
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            int[] rowHanders= gvRecordList.GetSelectedRows();
-            if ((rowHanders.Length > 0))
+            try
             {
-                DialogResult result = MessageBox.Show("您确认要删除选中标签记录吗？", "系统提示",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes) {
-                    rowHanders.ToList().ForEach(hander => {
-                        Book_init_mapping book_init_mapping = gvRecordList.GetRow(hander) as Book_init_mapping;
-                        if (null != book_init_mapping) {
-                            if (TagInfoDAL.DeletetBookInitMapping(book_init_mapping.id.ToString())) {
-                                gvRecordList.DeleteRow(hander);
-                                gvRecordList.RefreshData();
+                int[] rowHanders = gvRecordList.GetSelectedRows();
+                if ((rowHanders.Length > 0))
+                {
+                    DialogResult result = MessageBox.Show("您确认要删除选中标签记录吗？", "系统提示", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        rowHanders.ToList().ForEach(hander =>
+                        {
+                            Book_init_mapping book_init_mapping = gvRecordList.GetRow(hander) as Book_init_mapping;
+                            if (null != book_init_mapping)
+                            {
+                                if (TagInfoDAL.DeletetBookInitMapping(book_init_mapping.tag_id.ToString()))
+                                {
+                                    gvRecordList.DeleteRow(hander);
+                                    gvRecordList.RefreshData();
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
+            }
+            catch(Exception ee) {
+                MessageBox.Show("删除失败!"+ee.Message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private DateTime _dt = DateTime.Now;  //定义一个成员函数用于保存每次的时间点
@@ -1629,7 +1594,8 @@ namespace RFIDStation
                 MessageBox.Show("未读取到标签，写入NFC地址失败!", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string uri = $"{ string.Format(ConnectInit.NFC_Address, isbn) + "&lan=zh_cn" }";
+            //string uri = $"{ string.Format(ConnectInit.NFC_Address, isbn) + "&lan=zh_cn" }";
+            string uri = $"{ string.Format(ConnectInit.NFC_Address, isbn)}";
             string hexString = HexUtil.Encode(uri);
             hexString = $"{HexUtil.START_DIRECTIVE + hexString}";
             List<string> listData = HexUtil.ToStringArray(hexString);

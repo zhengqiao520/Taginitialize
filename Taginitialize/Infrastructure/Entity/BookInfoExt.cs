@@ -23,5 +23,14 @@ namespace Infrastructure.Entity
         /// 图书标签名称
         /// </summary>
         public string topical_name { get; set; }
+
+        /// <summary>
+        /// 最小适读年龄
+        /// </summary>
+        public int? min_age { get; set; } = null;
+        /// <summary>
+        /// 最大适读年龄
+        /// </summary>
+        public int? max_age { get; set; } = null;
     }
 }

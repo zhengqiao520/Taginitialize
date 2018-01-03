@@ -52,6 +52,7 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -266,7 +267,7 @@
             // 
             // gridColumn20
             // 
-            this.gridColumn20.Caption = "主题类别";
+            this.gridColumn20.Caption = "类别标签";
             this.gridColumn20.FieldName = "类别标签";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
@@ -318,6 +319,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnClear);
             this.panelControl1.Controls.Add(this.btnRemove);
             this.panelControl1.Controls.Add(this.btnExport);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -325,6 +327,17 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1233, 60);
             this.panelControl1.TabIndex = 6;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Location = new System.Drawing.Point(977, 16);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 28);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "清空列表";
+            this.btnClear.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btnRemove
             // 
@@ -552,5 +565,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraEditors.SimpleButton btnClear;
     }
 }

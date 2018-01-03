@@ -31,3 +31,11 @@ D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.c
 D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.dll
 D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.pdb
 D:\CodeRepertory\wdb_winclient\wdb_winclient\DevLib.Data\obj\Debug\DevLib.Data.csprojResolveAssemblyReference.cache
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\bin\Debug\DevLib.Data.XML
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\bin\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\bin\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\obj\Debug\Interop.VsWebProjectCBMLib.dll
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\obj\Debug\DevLib.Data.csproj.ResolveComReference.cache
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\obj\Debug\DevLib.Data.dll
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\obj\Debug\DevLib.Data.pdb
+D:\CodeRepertory\wdb_taginitialize\DevLib.Data\obj\Debug\DevLib.Data.csprojResolveAssemblyReference.cache

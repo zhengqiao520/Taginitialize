@@ -16,6 +16,7 @@ using NPOI.SS.UserModel;
 using DevExpress.XtraExport;
 using System.Collections.Generic;
 using Infrastructure.Entity;
+using System.Globalization;
 
 namespace Infrastructure
 {
@@ -254,7 +255,6 @@ namespace Infrastructure
                 ICell cell = headerRow.GetCell(j);
                 dt.Columns.Add(cell.ToString());
             }
-
             for (int i = (sheet.FirstRowNum + 1); i <= sheet.LastRowNum; i++)
             {
                 IRow row = sheet.GetRow(i);
@@ -262,8 +262,27 @@ namespace Infrastructure
                 
                 for (int j = row.FirstCellNum; j < cellCount; j++)
                 {
+
                     if (row.GetCell(j) != null)
-                        dataRow[j] = row.GetCell(j).ToString();
+                    {
+                        ICell cell = row.GetCell(j);
+                        if (cell.CellType == CellType.Numeric)
+                        {
+                            //NPOI中数字和日期都是NUMERIC类型的，这里对其进行判断是否是日期类型
+                            if (HSSFDateUtil.IsCellDateFormatted(cell))//日期类型
+                            {
+                                dataRow[j] = cell.DateCellValue.ToString("yyyy/MM/dd");
+                            }
+                            else//其他数字类型
+                            {
+                                dataRow[j] = cell.NumericCellValue;
+                            }
+                        }
+                        else
+                        {
+                            dataRow[j] = cell.ToString();
+                        }
+                    }
                 }
 
                 dt.Rows.Add(dataRow);

@@ -1726,12 +1726,12 @@ namespace RFIDStation
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "É¾³ýÑ¡ÖÐ±êÇ©";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -2062,7 +2062,7 @@ namespace RFIDStation
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.82619F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.17381F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 394F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 399F));
             this.tableLayoutPanel1.Controls.Add(this.labelControl9, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelControl8, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelControl4, 0, 3);
@@ -2096,7 +2096,7 @@ namespace RFIDStation
             // labelControl9
             // 
             this.labelControl9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl9.Location = new System.Drawing.Point(70, 374);
+            this.labelControl9.Location = new System.Drawing.Point(68, 374);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(24, 14);
@@ -2106,7 +2106,7 @@ namespace RFIDStation
             // labelControl8
             // 
             this.labelControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl8.Location = new System.Drawing.Point(427, 67);
+            this.labelControl8.Location = new System.Drawing.Point(422, 67);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(48, 14);
@@ -2116,7 +2116,7 @@ namespace RFIDStation
             // labelControl4
             // 
             this.labelControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl4.Location = new System.Drawing.Point(70, 120);
+            this.labelControl4.Location = new System.Drawing.Point(68, 120);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(24, 14);
@@ -2126,7 +2126,7 @@ namespace RFIDStation
             // labelControl3
             // 
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl3.Location = new System.Drawing.Point(70, 67);
+            this.labelControl3.Location = new System.Drawing.Point(68, 67);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(24, 14);
@@ -2136,7 +2136,7 @@ namespace RFIDStation
             // labelControl2
             // 
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl2.Location = new System.Drawing.Point(58, 37);
+            this.labelControl2.Location = new System.Drawing.Point(56, 37);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(36, 14);
@@ -2146,25 +2146,25 @@ namespace RFIDStation
             // txtBookName
             // 
             this.txtBookName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBookName.Location = new System.Drawing.Point(100, 3);
+            this.txtBookName.Location = new System.Drawing.Point(98, 3);
             this.txtBookName.Name = "txtBookName";
             this.txtBookName.Properties.AutoHeight = false;
-            this.txtBookName.Size = new System.Drawing.Size(272, 24);
+            this.txtBookName.Size = new System.Drawing.Size(269, 24);
             this.txtBookName.TabIndex = 1;
             // 
             // txtPress
             // 
             this.txtPress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPress.Location = new System.Drawing.Point(100, 33);
+            this.txtPress.Location = new System.Drawing.Point(98, 33);
             this.txtPress.Name = "txtPress";
             this.txtPress.Properties.AutoHeight = false;
-            this.txtPress.Size = new System.Drawing.Size(272, 24);
+            this.txtPress.Size = new System.Drawing.Size(269, 24);
             this.txtPress.TabIndex = 2;
             // 
             // labelControl1
             // 
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl1.Location = new System.Drawing.Point(46, 7);
+            this.labelControl1.Location = new System.Drawing.Point(44, 7);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
@@ -2174,34 +2174,34 @@ namespace RFIDStation
             // txtAuthor
             // 
             this.txtAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAuthor.Location = new System.Drawing.Point(481, 3);
+            this.txtAuthor.Location = new System.Drawing.Point(476, 3);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Properties.AutoHeight = false;
-            this.txtAuthor.Size = new System.Drawing.Size(389, 24);
+            this.txtAuthor.Size = new System.Drawing.Size(394, 24);
             this.txtAuthor.TabIndex = 10;
             // 
             // txtPublicate_date
             // 
             this.txtPublicate_date.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPublicate_date.Location = new System.Drawing.Point(481, 33);
+            this.txtPublicate_date.Location = new System.Drawing.Point(476, 33);
             this.txtPublicate_date.Name = "txtPublicate_date";
             this.txtPublicate_date.Properties.AutoHeight = false;
-            this.txtPublicate_date.Size = new System.Drawing.Size(389, 24);
+            this.txtPublicate_date.Size = new System.Drawing.Size(394, 24);
             this.txtPublicate_date.TabIndex = 11;
             // 
             // txtCreateTime
             // 
             this.txtCreateTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCreateTime.Location = new System.Drawing.Point(481, 63);
+            this.txtCreateTime.Location = new System.Drawing.Point(476, 63);
             this.txtCreateTime.Name = "txtCreateTime";
             this.txtCreateTime.Properties.AutoHeight = false;
-            this.txtCreateTime.Size = new System.Drawing.Size(389, 24);
+            this.txtCreateTime.Size = new System.Drawing.Size(394, 24);
             this.txtCreateTime.TabIndex = 12;
             // 
             // labelControl6
             // 
             this.labelControl6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl6.Location = new System.Drawing.Point(451, 7);
+            this.labelControl6.Location = new System.Drawing.Point(446, 7);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(24, 14);
@@ -2211,7 +2211,7 @@ namespace RFIDStation
             // labelControl7
             // 
             this.labelControl7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl7.Location = new System.Drawing.Point(427, 37);
+            this.labelControl7.Location = new System.Drawing.Point(422, 37);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(48, 14);
@@ -2226,7 +2226,7 @@ namespace RFIDStation
             0,
             0,
             0});
-            this.txtPrice.Location = new System.Drawing.Point(100, 63);
+            this.txtPrice.Location = new System.Drawing.Point(98, 63);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Properties.AutoHeight = false;
             this.txtPrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2244,22 +2244,22 @@ namespace RFIDStation
             0,
             0});
             this.txtPrice.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
-            this.txtPrice.Size = new System.Drawing.Size(272, 24);
+            this.txtPrice.Size = new System.Drawing.Size(269, 24);
             this.txtPrice.TabIndex = 3;
             // 
             // txtBrief
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txtBrief, 3);
             this.txtBrief.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBrief.Location = new System.Drawing.Point(100, 93);
+            this.txtBrief.Location = new System.Drawing.Point(98, 93);
             this.txtBrief.Name = "txtBrief";
-            this.txtBrief.Size = new System.Drawing.Size(770, 69);
+            this.txtBrief.Size = new System.Drawing.Size(772, 69);
             this.txtBrief.TabIndex = 18;
             // 
             // labelControl5
             // 
             this.labelControl5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl5.Location = new System.Drawing.Point(70, 215);
+            this.labelControl5.Location = new System.Drawing.Point(68, 215);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(24, 14);
@@ -2270,9 +2270,9 @@ namespace RFIDStation
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txtDescribe, 3);
             this.txtDescribe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescribe.Location = new System.Drawing.Point(100, 168);
+            this.txtDescribe.Location = new System.Drawing.Point(98, 168);
             this.txtDescribe.Name = "txtDescribe";
-            this.txtDescribe.Size = new System.Drawing.Size(770, 153);
+            this.txtDescribe.Size = new System.Drawing.Size(772, 153);
             this.txtDescribe.TabIndex = 20;
             // 
             // imageSlider1
@@ -2281,9 +2281,9 @@ namespace RFIDStation
             this.imageSlider1.CurrentImageIndex = -1;
             this.imageSlider1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageSlider1.LayoutMode = DevExpress.Utils.Drawing.ImageLayoutMode.MiddleCenter;
-            this.imageSlider1.Location = new System.Drawing.Point(100, 327);
+            this.imageSlider1.Location = new System.Drawing.Point(98, 327);
             this.imageSlider1.Name = "imageSlider1";
-            this.imageSlider1.Size = new System.Drawing.Size(770, 206);
+            this.imageSlider1.Size = new System.Drawing.Size(772, 206);
             this.imageSlider1.TabIndex = 22;
             this.imageSlider1.Text = "imageSlider1";
             this.imageSlider1.UseDisabledStatePainter = true;

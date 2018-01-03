@@ -1259,8 +1259,6 @@ namespace Phychips.PR9200
 
         private void tsMenuItemClear_Click(object sender, EventArgs e)
         {
-            //listViewMsg.Items.Clear();
-            //txtboxRCPHelp.Clear();
             msgSb.Remove(0, msgSb.Length);
         }
 
@@ -3819,7 +3817,7 @@ namespace Phychips.PR9200
                         Book_init_mapping book_init_mapping = gvRecordList.GetRow(hander) as Book_init_mapping;
                         if (null != book_init_mapping)
                         {
-                            if (TagInfoDAL.DeletetBookInitMapping(book_init_mapping.id.ToString()))
+                            if (TagInfoDAL.DeletetBookInitMapping(book_init_mapping.tag_id.ToString()))
                             {
                                 gvRecordList.DeleteRow(hander);
                                 gvRecordList.RefreshData();
